@@ -1,1 +1,2 @@
-##this is a pythn application
+## Its a cicd - pipeline practical implementation
+
