@@ -36,6 +36,6 @@ jobs:
       # Step 5: Deploy
       - name: Deploy application
         run: |
-          echo "Deploying..."
+          echo "Deploying.."
           # Add your deploy command here
           # e.g. scp files to a server, push to S3, use a CLI like Heroku, etc.
