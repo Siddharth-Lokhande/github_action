@@ -1,5 +1,3 @@
-name: Python CI_2
-
 # Trigger the workflow on any push to the main branch or pull request
 on:
   push:
@@ -36,14 +34,13 @@ jobs:
 
       # Step 5: Upload test results
       - name: Upload test results
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3
         with:
           name: test-results  
           path: reports/pytest-results.xml
-      # Step 6: create file
-      - name: create file
+
+      # Step 6: Create files
+      - name: Create files
         run: |
           echo "This is a test file" > test_file.txt
           echo "This is another test file" > test_file2.txt
-        
-      
