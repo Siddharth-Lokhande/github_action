@@ -1,0 +1,41 @@
+name: Python CD
+
+# Trigger deployment when changes are pushed to main
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Step 1: Check out the code
+      - name: Check out code
+        uses: actions/checkout@v2
+
+      # Step 2: Set up Python
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.8'
+
+      # Step 3: Install dependencies
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      # Step 4: Run build step (optional, depends on your app)
+      - name: Build app
+        run: |
+          echo "Build step goes here"
+          # e.g. python setup.py build or any custom script
+
+      # Step 5: Deploy
+      - name: Deploy application
+        run: |
+          echo "Deploying..."
+          # Add your deploy command here
+          # e.g. scp files to a server, push to S3, use a CLI like Heroku, etc.
